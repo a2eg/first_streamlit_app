@@ -36,8 +36,8 @@ fruit_choice = streamlit.text_input('What fruit would you like information about
 streamlit.write('The user entered ', fruit_choice)
 
 import requests
-# streamlit.text(fruityvice_response.json()) #just writes data to the screen
-# fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
+      # streamlit.text(fruityvice_response.json()) #just writes data to the screen
+      # fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 
 #take the json version of the response and normalize it
@@ -50,20 +50,20 @@ import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
-# my_cur.execute("SELECT * FROM FRUIT_LOAD_LIST")
-# my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
+      # my_cur.execute("SELECT * FROM FRUIT_LOAD_LIST")
+      # my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
 
 my_data_row = my_cur.fetchone()
-#streamlit.text("Hello from Snowflake:")
+      #streamlit.text("Hello from Snowflake:")
 streamlit.text("The fruit load list contains:")
-#streamlit.text(my_data_row)
+      #streamlit.text(my_data_row)
 streamlit.dataframe(my_data_row)
 
-streamlit.text("------------my_cnx-------------")
-streamlit.text(my_cnx)
-
-streamlit.text("------------my_cur = my_cnx.cursor()-------------")
-streamlit.text(my_cur)
+      #streamlit.text("------------my_cnx-------------")
+      #streamlit.text(my_cnx)
+      
+      #streamlit.text("------------my_cur = my_cnx.cursor()-------------")
+      #streamlit.text(my_cur)
 
 
 
