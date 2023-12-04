@@ -48,6 +48,7 @@ streamlit.dataframe(fruityvice_normalized)
 import snowflake.connector
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+streamlit.dataframe(my_cnx)
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 # my_cur.execute("SELECT * FROM FRUIT_LOAD_LIST")
