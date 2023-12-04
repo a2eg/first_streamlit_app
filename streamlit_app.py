@@ -59,7 +59,10 @@ streamlit.text("The fruit load list contains:")
 #streamlit.text(my_data_row)
 streamlit.dataframe(my_data_row)
 
-streamlit.text("-------------------------")
+streamlit.text("------------my_cnx-------------")
 streamlit.text(my_cnx)
+
+streamlit.text("------------my_cur = my_cnx.cursor()-------------")
+streamlit.text(my_cur)
 
 
