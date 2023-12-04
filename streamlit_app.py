@@ -65,7 +65,5 @@ streamlit.text(my_cnx)
 streamlit.text("------------my_cur = my_cnx.cursor()-------------")
 streamlit.text(my_cur)
 
-streamlit.text("------------my_cur.execute-------------")
-streamlit.text(my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()"))
 
 
